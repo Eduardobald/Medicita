@@ -27,7 +27,7 @@ Sistema de gestión de citas médicas con arquitectura N-Capas. Permite administ
 ## 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/medicitas.git
+git clone https://github.com/Miguel12Camacho/Medicita.git 
 cd medicitas
 ```
 
@@ -55,14 +55,6 @@ npm install
 1. En el dashboard de Supabase ve a **SQL Editor**
 2. Copia y ejecuta el contenido del archivo `schema.sql` que está en la raíz del proyecto
 
-### 3.3 Obtener las credenciales
-
-1. Ve a **Settings → API** en el dashboard de Supabase
-2. Copia los siguientes valores:
-   - **Project URL** → `https://xxxx.supabase.co`
-   - **anon / public key** → el JWT largo
-
----
 
 ## 5. Levantar el servidor de desarrollo
 
@@ -73,32 +65,5 @@ npm run dev
 Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
 ---
-
-## 6. Estructura del proyecto
-
-```
-medicitas/
-├── app/
-│   ├── citas/          # Gestión de citas (admin)
-│   ├── doctores/       # Gestión de doctores
-│   ├── pacientes/      # Gestión de pacientes
-│   ├── reservar/       # Vista pública para agendar citas
-│   └── layout.tsx      # Layout raíz con sincronización Supabase
-├── components/
-│   ├── app-sidebar.tsx # Navegación lateral
-│   ├── sync-provider.tsx # Inicialización de sync al montar la app
-│   └── ui/             # Componentes shadcn/ui
-├── lib/
-│   ├── supabase.ts     # Cliente de Supabase
-│   ├── sync.ts         # Capa de sincronización localStorage ↔ Supabase
-│   ├── types.ts        # Tipos TypeScript globales
-│   └── data/
-│       ├── storage.ts           # CRUD sobre localStorage
-│       ├── citas_repository.ts  # Repositorio de citas
-│       ├── doctores_repository.ts
-│       ├── pacientes_repository.ts
-│       └── seed.ts              # Datos de muestra iniciales
-└── schema.sql          # Script SQL para crear tablas en Supabase
-```
 
 El caché local (localStorage) garantiza que la app funcione aunque el dispositivo pierda conexión momentáneamente.
